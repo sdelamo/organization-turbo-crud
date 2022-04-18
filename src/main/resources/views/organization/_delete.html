@@ -1,0 +1,5 @@
+<form th:fragment="delete(organization)" xmlns:th="http://www.thymeleaf.org"
+      th:action="@{|/organizations/${organization.id}/delete|}"
+      method="post">
+    <button type="submit" class="btn btn-danger" th:text="#{organization.delete}"></button>
+</form>

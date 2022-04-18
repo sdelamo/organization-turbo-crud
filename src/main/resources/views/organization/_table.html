@@ -1,0 +1,18 @@
+<div th:fragment="table(organizations, pages)" xmlns:th="http://www.thymeleaf.org">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col" th:text="#{organization.name}"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody id="organizations-rows">
+                <tr th:each="organization : ${organizations}"
+                    th:include="organization/_tr :: tr(${organization})"
+                    th:id="@{|organization-${organization.id}|}"
+                />
+        </tbody>
+    </table>
+    <nav th:replace="~{_pagination :: pagination(${pages})}"></nav>
+</div>

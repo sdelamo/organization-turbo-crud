@@ -1,0 +1,24 @@
+micronaut:
+  application:
+    name: organization
+  router:
+    static-resources:
+      assets:
+        paths: 'classpath:assets'
+        mapping: '/assets/**'
+datasources:
+  default:
+    url: jdbc:mysql://localhost:3306/db
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: ''
+    schema-generate: NONE
+    dialect: MYSQL
+liquibase:
+  datasources:
+    default:
+      change-log: 'classpath:db/liquibase-changelog.xml'
+netty:
+  default:
+    allocator:
+      max-order: 3

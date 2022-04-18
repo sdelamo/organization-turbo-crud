@@ -1,0 +1,12 @@
+<nav aria-label="" th:fragment="pagination(pages)" xmlns:th="http://www.thymeleaf.org">
+    <ul class="pagination">
+        <li th:each="page : ${pages}"
+            th:classappend="${page.isActive()}?active"
+            class="page-item">
+            <a class="page-link"
+               data-turbo-action="advance"
+               th:href="${page.href}"
+               th:text="${page.title}"></a>
+        </li>
+    </ul>
+</nav>

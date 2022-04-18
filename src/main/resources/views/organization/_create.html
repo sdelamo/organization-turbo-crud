@@ -1,0 +1,12 @@
+<form th:fragment="create()" xmlns:th="http://www.thymeleaf.org"
+      action="/organizations"
+      method="post"
+      data-controller="reset-form"
+      data-action="turbo:submit-end->reset-form#reset">
+    <div class="mb-3">
+        <label for="organization-name" class="form-label" th:text="#{organization.name}"></label>
+        <input type="text" name="name" class="form-control" id="organization-name" aria-describedby="organizationHelp">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+    <button type="submit" class="btn btn-primary" th:text="#{organization.save}"></button>
+</form>

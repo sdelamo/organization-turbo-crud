@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{layout :: layout(~{::script},~{::main})}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script></script>
+</head>
+<body>
+<main>
+    <h1 th:text="#{organizations}"></h1>
+    <turbo-frame id="main">
+        <table th:replace="~{organization/_table :: table(${organizations},${pages})}"></table>
+    </turbo-frame>
+    <form th:replace="~{organization/_create :: create()}"></form>
+</main>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<tr th:fragment="tr(organization)"
+    xmlns:th="http://www.thymeleaf.org"
+    th:id="@{|organization-${organization.id}|}">
+    <th scope="row" th:text="${organization.id}"></th>
+    <td th:text="${organization.name}"></td>
+    <td><form th:replace="~{organization/_delete :: delete(${organization})}"></form></td>
+</tr>
